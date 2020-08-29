@@ -67,3 +67,10 @@
   when:
     - drain_nodes
     - needs_cordoning
+
+- name: Pause to verify pods state on others nodes
+  pause:
+    prompt: "Verify manually pods on other nodes to be Running state before continue"
+  when:
+    - drain_nodes
+    - needs_cordoning

@@ -125,7 +125,7 @@
   hosts: kube-node:!kube-master
   gather_facts: False
   any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
-  serial: "{{ serial | default('20%') }}"
+  serial: 1
   roles:
     - { role: kubespray-defaults }
     - { role: upgrade/pre-upgrade, tags: pre-upgrade }
